@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/CMakeFiles/bootloader
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/CMakeFiles/bootloader.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/CMakeFiles/bootloader-complete.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/selt2/OneDrive/Escritorio/lab_2_2025IoT/IoT2025_lab2/STA/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
