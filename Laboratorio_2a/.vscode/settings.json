@@ -9,6 +9,10 @@
     "idf.flashType": "UART",
     "files.associations": {
         "cstdlib": "c",
-        "esp_rom_delay_ms.h": "c"
+        "esp_rom_delay_ms.h": "c",
+        "compare": "c",
+        "cstdint": "c",
+        "touch_embebido.h": "c",
+        "led_embebido.h": "c"
     }
 }
