@@ -4,6 +4,8 @@
 #include "esp_log.h"
 #include "led_embebido.h"
 #include "touch_embebido.h"
+#include "esp_rom_delay_ms.h"
+#include "esp_task_wdt.h"
 
 static const char *TAG = "main";
 
@@ -23,6 +25,7 @@ static const uint8_t colores[][3] = {
 #define NUM_COLORES (sizeof(colores)/sizeof(colores[0]))
 
 void app_main(void) {
+    esp_task_wdt_deinit();
     ESP_LOGI(TAG, "Iniciando aplicación...");
 
     if (led_embebido_iniciar() != ESP_OK) {
@@ -47,8 +50,6 @@ void app_main(void) {
         colores[color_actual_idx][1],
         colores[color_actual_idx][2]
     );
-
-    ESP_LOGI(TAG, "Aplicación lista. Usa photo (TOUCH2), play/pause (TOUCH6), network (TOUCH11)");
 
     while (1) {
         for (int i = 0; i < NUM_CANALES; i++) {
@@ -105,7 +106,7 @@ void app_main(void) {
 
             prev_estado[i] = tocado;
         }
-
-        vTaskDelay(pdMS_TO_TICKS(100));
+        esp_rom_delay_ms(100);
+        // vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
