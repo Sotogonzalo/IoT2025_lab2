@@ -8,9 +8,9 @@
 static const char *TAG = "main";
 
 typedef enum {
-    CANAL_COLOR = 0,  // TOUCH2 (photo)
-    CANAL_ONOFF,      // TOUCH6 (play/pause)
-    CANAL_BRILLO,     // TOUCH11 (network)
+    CANAL_COLOR = 0,  // TOUCH2 (photo) - prender/apagar LED
+    CANAL_ONOFF,      // TOUCH6 (play/pause) - cambiar color
+    CANAL_BRILLO,     // TOUCH11 (network) - cambiar brillo
     NUM_CANALES
 } canal_touch_t;
 

@@ -37,7 +37,7 @@ esp_err_t led_embebido_set_color(uint8_t red, uint8_t green, uint8_t blue) {
     ultimo_b = blue;
     led_encendido = true;
 
-    // Aplicar brillo actual
+    // Se aplica el brillo actual al cambio de color.
     uint8_t r = (red * brillo_actual) / 255;
     uint8_t g = (green * brillo_actual) / 255;
     uint8_t b = (blue * brillo_actual) / 255;
@@ -72,7 +72,7 @@ esp_err_t led_embebido_toggle(void) {
         if (ret == ESP_OK) led_encendido = false;
         return ret;
     } else {
-        // Restaurar color anterior con brillo actual
+        // Si el LED estaba apagado, restaura el último color con brillo actual
         uint8_t r = (ultimo_r * brillo_actual) / 255;
         uint8_t g = (ultimo_g * brillo_actual) / 255;
         uint8_t b = (ultimo_b * brillo_actual) / 255;
@@ -96,7 +96,7 @@ esp_err_t led_embebido_set_brillo(uint8_t nivel) {
     brillo_actual = nivel;
 
     if (led_encendido) {
-        // Reaplicar el color con nuevo brillo
+        // Mismo color per con nuevo brillo
         uint8_t r = (ultimo_r * brillo_actual) / 255;
         uint8_t g = (ultimo_g * brillo_actual) / 255;
         uint8_t b = (ultimo_b * brillo_actual) / 255;
