@@ -2,14 +2,13 @@
 #include "touch_embebido.h"
 #include "esp_log.h"
 #include "driver/touch_pad.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
+#include "esp_rom_delay_ms.h"
 
 static const char *TAG = "touch_embebido";
 
 #define NUM_CANALES 3
 
-// photo, play/pause, network
+// photo, play/pause, network en el touch pad
 static const touch_pad_t canales[NUM_CANALES] = {
     TOUCH_PAD_NUM2,
     TOUCH_PAD_NUM6,
@@ -38,9 +37,9 @@ esp_err_t touch_embebido_iniciar(void) {
     touch_pad_filter_enable();
     touch_pad_fsm_start();
 
-    vTaskDelay(pdMS_TO_TICKS(300)); // estabilización
+    esp_rom_delay_ms(300);
 
-    // Calcular umbrales
+    // Calculamos umbrales
     for (int i = 0; i < NUM_CANALES; i++) {
         uint32_t base = 0;
         touch_pad_read_raw_data(canales[i], &base);
@@ -53,7 +52,7 @@ esp_err_t touch_embebido_iniciar(void) {
 }
 
 bool touch_embebido_fue_tocado(int canal) {
-    if (canal < 0 || canal >= NUM_CANALES) return false;
+    if (canal < 0 || canal >= NUM_CANALES) return false; // Validación de canal
 
     uint32_t valor = 0;
     if (touch_pad_read_raw_data(canales[canal], &valor) == ESP_OK) {

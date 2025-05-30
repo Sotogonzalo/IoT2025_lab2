@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 #include "esp_log.h"
 #include "led_embebido.h"
 #include "touch_embebido.h"
@@ -107,6 +105,5 @@ void app_main(void) {
             prev_estado[i] = tocado;
         }
         esp_rom_delay_ms(100);
-        // vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
